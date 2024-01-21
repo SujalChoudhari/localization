@@ -1,3 +1,6 @@
 // index.tsx
-export { LocalizationProvider, useLocalization } from './LocalizationProvider';
-export { default as Translate } from './Translate';
+import Translate from './Translate';
+import { LocalizationProvider, useLocalization } from './LocalizationProvider';
+
+export default Translate
+export { LocalizationProvider, useLocalization }
