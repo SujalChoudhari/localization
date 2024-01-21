@@ -7,22 +7,35 @@
 ## Install
 
 ```bash
-npm install --save localization
+npm install --save @sujalchoudhari/localization
 ```
 
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+// main.tsx
 
-import MyComponent from 'localization'
-import 'localization/dist/index.css'
+import {LocalizationProvider, useLocalization} from 'localization'
+<LocalizationProvider>
+  <App />
+</LocalizationProvider>
+```
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+```tsx
+//  Using Translatons
+import Translate from 'localization'
+
+<Translate> Hello ~ नमस्ते ~ नमस्कार </Translate>
+// <Translate> 0 ~ 1 ~ 2 ~ ... ~ n </Translate>
+```
+
+```tsx
+// Changing Localization
+import {useLocalization} from 'localization'
+
+const {currentLanguage,changeLanguage} = useLocalization()
+
+changeLanguage(1)
 ```
 
 ## License

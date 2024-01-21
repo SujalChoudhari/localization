@@ -12,7 +12,7 @@ const Translate: React.FC<TranslateProps> = ({ children }) => {
     const translationArray: Array<string> = children?.toString().split("~") || [];
     let displayText: string = `[Translation Not Added at language index ${currentLanguage}]` // want to tell user where not added
     if (currentLanguage < translationArray?.length) {
-        displayText = translationArray[currentLanguage]
+        displayText = translationArray[currentLanguage].trim()
     }
 
     return <>{displayText}</>
