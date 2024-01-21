@@ -15,7 +15,7 @@ const Translate: React.FC<TranslateProps> = ({ children }) => {
         displayText = translationArray[currentLanguage].trim()
     }
 
-    return <>{displayText}</>
+    return <span>{displayText}</span>
 };
 
 export default Translate;

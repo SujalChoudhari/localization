@@ -1,10 +1,13 @@
 {
-  "name": "localization",
+  "name": "@sujalchoudhari/localization",
   "version": "1.0.0",
   "description": "Simple Localization tool for React with multiple languages and easy selection",
   "author": "SujalChoudhari",
   "license": "MIT",
-  "repository": "SujalChoudhari/localization",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SujalChoudhari/localization.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
