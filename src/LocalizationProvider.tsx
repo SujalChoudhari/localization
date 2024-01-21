@@ -1,5 +1,5 @@
 // LocalizationProvider.tsx
-import React, { createContext, useContext, FC, ReactNode, useState } from 'react';
+import React,{ createContext, useContext, FC, ReactNode, useState } from 'react';
 
 interface LocalizationContextProps {
     currentLanguage: number;
