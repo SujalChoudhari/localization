@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save @sujalchoudhari/localization
+npm install --save @sujalchoudhari/localization@latest
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save @sujalchoudhari/localization
 ```tsx
 // main.tsx
 
-import {LocalizationProvider, useLocalization} from 'localization'
+import {LocalizationProvider, useLocalization} from '@sujalchoudhari/localization'
 <LocalizationProvider>
   <App />
 </LocalizationProvider>
@@ -23,7 +23,7 @@ import {LocalizationProvider, useLocalization} from 'localization'
 
 ```tsx
 //  Using Translatons
-import Translate from 'localization'
+import Translate from '@sujalchoudhari/localization'
 
 <Translate> Hello ~ नमस्ते ~ नमस्कार </Translate>
 // <Translate> 0 ~ 1 ~ 2 ~ ... ~ n </Translate>
@@ -31,7 +31,7 @@ import Translate from 'localization'
 
 ```tsx
 // Changing Localization
-import {useLocalization} from 'localization'
+import {useLocalization} from '@sujalchoudhari/localization'
 
 const {currentLanguage,changeLanguage} = useLocalization()
 
