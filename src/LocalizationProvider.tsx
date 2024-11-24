@@ -12,19 +12,33 @@ interface LocalizationProviderProps {
     children: ReactNode;
 }
 
+
 /**
- * Provides a context for localizing strings in a React application.
- * Should be the outermost component in the application.
- * @example
- * <LocalizationProvider>
- *   <App />
- * </LocalizationProvider>
+ * A component that provides a context for the current language and a function to change it.
+ * It accepts a children prop which is the component tree that will be wrapped in this context.
+ * It also accepts two optional props: persistLanguage and defaultLanguage.
+ * persistLanguage is a boolean that defaults to false.
+ * If it is true, the current language will be stored in localStorage and will persist between page reloads.
+ * defaultLanguage is a number that defaults to 0.
+ * It sets the initial value of currentLanguage if persistLanguage is false.
+ * @param {LocalizationProviderProps & { persistLanguage?: boolean; defaultLanguage?: number; }} props
+ * @returns {ReactNode}
  */
-export const LocalizationProvider: FC<LocalizationProviderProps> = ({ children }) => {
-    const [currentLanguage, setCurrentLanguage] = useState(0); // Initial language
+export const LocalizationProvider: FC<LocalizationProviderProps & {
+    persistLanguage?: boolean;
+    defaultLanguage?: number;
+}> = ({ children, persistLanguage = false, defaultLanguage = 0 }) => {
+    const [currentLanguage, setCurrentLanguage] = useState(
+        persistLanguage
+            ? Number(localStorage.getItem('currentLanguage')) || defaultLanguage
+            : defaultLanguage,
+    );
 
     const changeLanguage = (newLanguage: number) => {
         setCurrentLanguage(newLanguage);
+        if (persistLanguage) {
+            localStorage.setItem('currentLanguage', String(newLanguage));
+        }
     };
 
     return (
