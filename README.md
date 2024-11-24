@@ -12,6 +12,8 @@
 - 🎯 Customizable separator for translations
 - ⚛️ React & Next.js compatible
 - 📝 TypeScript support
+- 💾 Persistant Option to save the selected language
+
 
 ## Installation
 
@@ -47,7 +49,7 @@ import { LocalizationProvider } from '@sujalchoudhari/localization'
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <LocalizationProvider>
+    <LocalizationProvider defaultLanguage={2} persistLanguage={true}>
       {children}
     </LocalizationProvider>
   )
