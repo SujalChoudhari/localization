@@ -12,6 +12,14 @@ interface LocalizationProviderProps {
     children: ReactNode;
 }
 
+/**
+ * Provides a context for localizing strings in a React application.
+ * Should be the outermost component in the application.
+ * @example
+ * <LocalizationProvider>
+ *   <App />
+ * </LocalizationProvider>
+ */
 export const LocalizationProvider: FC<LocalizationProviderProps> = ({ children }) => {
     const [currentLanguage, setCurrentLanguage] = useState(0); // Initial language
 
@@ -26,6 +34,13 @@ export const LocalizationProvider: FC<LocalizationProviderProps> = ({ children }
     );
 };
 
+/**
+ * Returns an object with two properties: currentLanguage, and changeLanguage.
+ * currentLanguage is the index of the currently selected language.
+ * changeLanguage is a function that takes a number and changes the currentLanguage to that number.
+ * Note: This must be used within a LocalizationProvider.
+ * @returns {LocalizationContextProps}
+ */
 export const useLocalization = () => {
     const context = useContext(LocalizationContext);
     if (!context) {
